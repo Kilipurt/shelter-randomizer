@@ -10,7 +10,7 @@ public class InfoFileReader {
     private static final String path = "D:\\shelter\\";
 
     public static String readLine(int line, String fileNumber) throws Exception {
-        String finalPath = path + fileNumber;
+        String finalPath = path + fileNumber + ".txt";
         try (BufferedReader bufferedReader = new BufferedReader(new FileReader(finalPath))) {
             List<String> lines = bufferedReader.lines().collect(Collectors.toList());
 
