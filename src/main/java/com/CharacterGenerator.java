@@ -17,9 +17,19 @@ import java.util.Collections;
 import java.util.List;
 
 public class CharacterGenerator {
+    private static CharacterGenerator characterGenerator;
+
     private static final String BASE_URL = "//randomall.ru/custom/gen/1538/";
+
     private String token;
     private int retries = 0;
+
+    private CharacterGenerator() {
+    }
+
+    public static CharacterGenerator getInstance() {
+        return characterGenerator == null ? new CharacterGenerator() : characterGenerator;
+    }
 
     public String generate() throws Exception {
         if (token == null) {
